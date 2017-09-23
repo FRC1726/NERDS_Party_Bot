@@ -3,11 +3,13 @@
 #include <LiveWindow/LiveWindow.h>
 
 std::shared_ptr<DriveTrain> Robot::drivetrain;
+std::shared_ptr<Catapult> Robot::catapult;
 std::shared_ptr<OI> Robot::oi;
 
 
 void Robot::RobotInit(){
 	Robot::drivetrain.reset(new DriveTrain);
+	Robot::catapult.reset(new Catapult);
 	Robot::oi.reset(new OI);
 }
 

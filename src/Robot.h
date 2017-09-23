@@ -8,6 +8,7 @@
 #include <memory>
 
 #include "Subsystems/DriveTrain.h"
+#include "Subsystems/Catapult.h"
 #include "OI.h"
 
 class Robot: public frc::IterativeRobot {
@@ -22,6 +23,7 @@ public:
 	void TestPeriodic() override;
 
 	static std::shared_ptr<DriveTrain> drivetrain;
+	static std::shared_ptr<Catapult> catapult;
 	static std::shared_ptr<OI> oi;
 
 private:
