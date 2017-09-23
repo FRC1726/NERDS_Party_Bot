@@ -14,7 +14,7 @@ void ArcadeDriveWithJoys::Initialize() {
 
 // Called repeatedly when this Command is scheduled to run
 void ArcadeDriveWithJoys::Execute() {
-	Robot::drivetrain->Arcade(Robot::oi->GetAxis(LEFT_Y), Robot::oi->GetAxis(RIGHT_X));
+	Robot::drivetrain->Arcade(-Robot::oi->GetAxis(LEFT_Y), Robot::oi->GetAxis(RIGHT_X));
 }
 
 // Make this return true when this Command no longer needs to run execute()
