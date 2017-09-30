@@ -2,6 +2,8 @@
 #include <Commands/Scheduler.h>
 #include <LiveWindow/LiveWindow.h>
 
+#include "Commands/DriveStraight.h"
+
 std::shared_ptr<DriveTrain> Robot::drivetrain;
 std::shared_ptr<Catapult> Robot::catapult;
 std::shared_ptr<OI> Robot::oi;
@@ -22,7 +24,7 @@ void Robot::DisabledPeriodic(){
 }
 
 void Robot::AutonomousInit(){
-
+	frc::Scheduler::GetInstance()->AddCommand(new DriveStraight(60));
 }
 
 void Robot::AutonomousPeriodic() {
