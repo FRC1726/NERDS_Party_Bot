@@ -14,7 +14,7 @@ void ArcadeDriveWithJoys::Initialize() {
 
 // Called repeatedly when this Command is scheduled to run
 void ArcadeDriveWithJoys::Execute() {
-	Robot::drivetrain->Arcade(-Robot::oi->GetAxis(LEFT_Y), Robot::oi->GetAxis(RIGHT_X));
+	Robot::drivetrain->Arcade(applySensitivity(-Robot::oi->GetAxis(LEFT_Y)), applySensitivity(Robot::oi->GetAxis(RIGHT_X)));
 }
 
 // Make this return true when this Command no longer needs to run execute()
@@ -31,4 +31,20 @@ void ArcadeDriveWithJoys::End() {
 // subsystems is scheduled to run
 void ArcadeDriveWithJoys::Interrupted() {
 	Robot::drivetrain->Stop();
+}
+
+double ArcadeDriveWithJoys::applySensitivity(double joy){
+	double max_speed = 0.8;
+	double min_speed = 0.2;
+
+	if(std::fabs(joy) <= DEADZONE){
+		return 0;
+	}else{
+		int out = std::fabs(joy) * (max_speed - min_speed) + min_speed;
+		if(joy < 0){
+			return -out;
+		}else{
+			return out;
+		}
+	}
 }
