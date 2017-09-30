@@ -36,4 +36,7 @@ constexpr int BTN_RSTICK = 10;
 //Pneumatics
 constexpr int CATAPULT_ARM = 0;
 
+//deadzone
+constexpr double DEADZONE = 0.1;
+
 #endif  // ROBOTMAP_H
