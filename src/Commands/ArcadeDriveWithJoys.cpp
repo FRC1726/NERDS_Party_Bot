@@ -34,13 +34,13 @@ void ArcadeDriveWithJoys::Interrupted() {
 }
 
 double ArcadeDriveWithJoys::applySensitivity(double joy){
-	int max_speed = 0.8;
-	int min_speed = 0.2;
+	double max_speed = 0.8;
+	double min_speed = 0.2;
 
-	if(abs(joy) <= DEADZONE){
+	if(std::fabs(joy) <= DEADZONE){
 		return 0;
 	}else{
-		int out = abs(joy) * (max_speed - min_speed) + min_speed;
+		int out = std::fabs(joy) * (max_speed - min_speed) + min_speed;
 		if(joy < 0){
 			return -out;
 		}else{
