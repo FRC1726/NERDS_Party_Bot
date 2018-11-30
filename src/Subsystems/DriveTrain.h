@@ -2,17 +2,17 @@
 #define DriveTrain_H
 
 #include <Commands/Subsystem.h>
-#include <TalonSRX.h>
+#include <VictorSP.h>
 #include <Encoder.h>
-#include <RobotDrive.h>
+#include <Drive/DifferentialDrive.h>
 
 class DriveTrain : public Subsystem {
 private:
-	frc::TalonSRX left_motor;
-	frc::TalonSRX right_motor;
+	VictorSP left_motor;
+	VictorSP right_motor;
 	frc::Encoder left_encoder;
 	frc::Encoder right_encoder;
-	frc::RobotDrive drive;
+	DifferentialDrive drive;
 public:
 	enum DriveSide{kLeft, kRight};
 

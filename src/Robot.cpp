@@ -38,7 +38,7 @@ void Robot::TeleopPeriodic() {
 }
 
 void Robot::TestPeriodic() {
-	frc::LiveWindow::GetInstance()->Run();
+
 }
 
 START_ROBOT_CLASS(Robot)
