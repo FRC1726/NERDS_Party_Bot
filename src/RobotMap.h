@@ -4,6 +4,7 @@
 //DriveTrain PWM IDs
 constexpr int DRIVE_RIGHT = 0;
 constexpr int DRIVE_LEFT = 1;
+constexpr int TREE_MOTOR = 2;
 
 //DriveTrain Encoders
 constexpr int ENCODER_RIGHT_A = 0;
@@ -33,7 +34,10 @@ constexpr int BTN_SELECT = 7;
 constexpr int BTN_START = 8;
 constexpr int BTN_LSTICK = 9;
 constexpr int BTN_RSTICK = 10;
+
 //Pneumatics
 constexpr int CATAPULT_ARM = 0;
+
+
 
 #endif  // ROBOTMAP_H
